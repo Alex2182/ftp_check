@@ -8,7 +8,7 @@ ftp.login("1csynctvzkscuser", "Gb43#gbw2")
 
 ftp.cwd('TVZ_KCK')
 files = []
-with open("file_list.txt", "r") as myfile:
+with open("/home/abonin/ftp/file_list.txt", "r") as myfile:
     file_list =myfile.read() 
 date = datetime.datetime.now().strftime("%y%m%d")
 #date = '211022'
@@ -23,8 +23,8 @@ except ftplib.error_perm as resp:
 
 for f in files:
     if (f.find(date)>=0 and file_list.find(f)<0):
-       with open("file_list.txt", "a") as myfile:
-           myfile.write(f)
+       with open("/home/abonin/ftp/file_list.txt", "a") as myfile:
+           myfile.write(f'{f} \n')
        text = [f'Найден новый файл {f}']
        telegram_send.send(messages=text)
        # print (f)
