@@ -3,8 +3,8 @@ import telegram_send
 import datetime 
 
 
-ftp = ftplib.FTP("kscftpserv.ksc.local")
-ftp.login("1csynctvzkscuser", "Gb43#gbw2")
+ftp = ftplib.FTP("---")
+ftp.login("----", "---")
 
 ftp.cwd('TVZ_KCK')
 files = []
